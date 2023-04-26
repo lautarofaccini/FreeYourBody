@@ -1,0 +1,40 @@
+<div class="modal fade" id="loginModalToggle" aria-hidden="true" aria-labelledby="loginModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="loginModalToggleLabel">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="form" (ngSubmit)="enviarForm($event)">
+                <div class="mb-3">
+                    <label for="loginInputEmail1" class="form-label">Correo electronico</label>
+                    <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp" formControlName="email">
+                </div>
+                <div *ngIf="Email?.errors  && Email?.touched">    
+                    <p *ngIf="Email?.hasError('required')" class="error">
+                        El email es requerido.
+                    </p>
+                    <p *ngIf="Email?.hasError('email')" class="error">
+                        El formato del email debe ser válido.
+                    </p>
+                </div>
+                <div class="mb-3">
+                    <label for="loginInputPassword1" class="form-label">Constraseña</label>
+                    <input type="password" class="form-control" id="loginInputPassword1" formControlName="password" [class.border-danger]="EmailValid">
+                </div>
+                <div *ngIf="Password?.errors  && Password?.touched">
+                    <p *ngIf="Password?.hasError('required')" class="error">
+                        El password es requerido.
+                    </p>
+                    <p *ngIf="Password?.errors?.['minlength']" class="error">
+                        El password debe ser de 8 o más caracteres.
+                    </p>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary enviar" id="submitButton">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
