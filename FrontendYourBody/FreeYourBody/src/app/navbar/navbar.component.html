@@ -1,12 +1,14 @@
-<nav class="OnStart navbar navbar-expand-sm navbar-light bg-light" id="navbar">
+<nav class="OnStart navbar navbar-dark bg-black" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img [src]="" alt="" width="30" height="30">
+        <a class="navbar-brand d-flex align-items-center" (click)="toMain()" routerLink="/">
             <span class="text-primary fs-5 fw-bold ms-2">Free Your Body</span>
         </a>
-        <a class="btn btn-outline-primary me-2 ms-auto" data-bs-toggle="modal" href="#loginModalToggle" role="button" *ngIf="!isLoggedIn()">Login</a>
-        <a class="btn btn-outline-primary me-2 ms-auto" role="button" *ngIf="isLoggedIn()" routerLink="/admin">Admin</a>
-        <a class="btn btn-outline-primary me-2 " role="button" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
+        <a class="btn btn-outline-primary me-2 ms-auto" role="button" *ngIf="!isInAdmin()" (click)="toAbout()">About</a>
+        <a class="btn btn-outline-primary me-2" role="button" *ngIf="!isInAdmin()" (click)="toLocation()">Location</a>
+        <a class="btn btn-outline-primary me-2" role="button" *ngIf="!isInAdmin()" (click)="toBuy()">Buy</a>
+        <a class="btn btn-outline-primary me-2" data-bs-toggle="modal" href="#loginModalToggle" role="button" *ngIf="!isLoggedIn()">Login</a>
+        <a class="btn btn-outline-primary me-2" role="button" *ngIf="(isLoggedIn() && !isInAdmin())" routerLink="/admin">Admin</a>
+        <a class="btn btn-outline-primary me-2" role="button" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
     </div>
 </nav>
 <app-login></app-login>

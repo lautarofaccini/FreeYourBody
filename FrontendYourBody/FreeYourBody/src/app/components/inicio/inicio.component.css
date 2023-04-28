@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+main {
+    color: #ffffff;
+}
+
+img{
+    width: 500px;
+}
+
+.icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floating{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.brand{
+    padding-top: 100px;
+}
+
+
+/*
+@media(max-width: 1500px) {
+    .heyy-olvidonaBack {
+        font-size:150px
+    }
+}
+
+@media(max-width: 991px) {
+    .heyy-olvidonaBack {
+        font-size:150px
+    }
+
+    .headerOnStart {
+        display: none
+    }
+}
+
+@media(max-width: 576px) {
+    .rickrolled {
+        display:none
+    }
+
+    .modal {
+        z-index: 99999;
+        background-color: #202020;
+        border-radius: 1rem;
+        position: relative;
+        display: flex;
+        margin: auto;
+        width: 95%;
+        height: 40vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+
+    .close {
+        left: 87%;
+        height: 30px;
+        padding: 8px;
+        width: 30px
+    }
+
+    .rickrolled h3 {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+        color: #fff
+    }
+
+    .rickrolled h4 {
+        font-size: 1.1rem;
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+        color: #d4d4d4
+    }
+
+    .metiensabandonado {
+        font-size: 3rem;
+        line-height: 1;
+        margin-bottom: 2rem;
+        font-weight: 100;
+        text-align: center;
+        color: #fff
+    }
+
+    .heyy-olvidonaBack {
+        display: none
+    }
+
+    .heyy-olvidona {
+        font-size: 60px;
+        top: 43%
+    }
+
+    .cuantotiempotxt {
+        font-size: 1rem;
+        color: #d2d2d2
+    }
+
+    .cuantotiempo {
+        top: 40%;
+        font-size: 1.25rem
+    }
+
+    .vid2 {
+        margin-top: -6rem;
+        width: 90%
+    }
+
+    .icon {
+        width: 100px;
+        height: 100px;
+        top: 75%
+    }
+
+    .button {
+        font-size: 1.25rem
+    }
+}
+*/

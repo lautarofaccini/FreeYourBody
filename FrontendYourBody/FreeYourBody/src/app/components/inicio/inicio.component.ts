@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarComponent } from 'src/app/navbar/navbar.component';
+NavbarComponent
 
 @Component({
   selector: 'app-inicio',
@@ -13,5 +15,7 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  toAbout(){
+    document.getElementById("about")?.scrollIntoView({behavior:"smooth"});
+  }
 }
