@@ -1,17 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements OnInit {
+export class InicioComponent {
+
+  
 
   title = 'FreeYourBody';
   
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    
   }
+
+  toAbout(){
+    document.getElementById("about")?.scrollIntoView({behavior:"smooth"});
+  }
+
+
 
 }

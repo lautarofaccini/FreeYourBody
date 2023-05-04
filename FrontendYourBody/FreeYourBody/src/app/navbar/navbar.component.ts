@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -10,16 +11,34 @@ declare var $: any;
 })
 export class NavbarComponent {
 
-  constructor(private authService:AuthService){
+  constructor(private authService:AuthService, private router: Router){
   
   }
 
-  
+  isInAdmin(){
+    return this.router.url == '/admin' ? true : false;
+  }
+
+  toMain(){
+    document.getElementById("main")?.scrollIntoView({behavior:"smooth"});
+  }
+
+  toAbout(){
+    document.getElementById("about")?.scrollIntoView({behavior:"smooth"});
+  }
+
+  toLocation(){
+    document.getElementById("location")?.scrollIntoView({behavior:"smooth"});
+  }
+
+  toBuy(){
+    document.getElementById("buy")?.scrollIntoView({behavior:"smooth"});
+  }
 
   @HostListener("document:scroll")
   handleScroll(){
     if (document.documentElement.scrollTop > 15){
-      console.log('scrollTop',)
+      console.log(this.router.url)
       document.getElementsByTagName('nav')[0].classList.add('OnScroll')
       //OnScroll
     } else {
