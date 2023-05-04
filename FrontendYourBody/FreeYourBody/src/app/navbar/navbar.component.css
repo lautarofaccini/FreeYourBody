@@ -18,3 +18,9 @@
     display: flex;
 }
 
+
+@media(max-width: 970px) {
+    .OnStart {
+        display: none
+    }
+}

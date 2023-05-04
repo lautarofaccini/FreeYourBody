@@ -1,36 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
 main {
     color: #ffffff;
 }
 
 img{
-    width: 500px;
+    max-height: 60vh;
 }
 
 .icon{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60px;
+    min-width: 10vh;
+    max-width: 11vh;
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
 }
 
+@media(max-height: 418px) {
+    .icon {
+        display: none
+    }
+}
+
 @keyframes floating{
     0%{
-        transform: translateY(0px);
+        transform: translateY(40px);
     }
     50%{
-        transform: translateY(10px);
+        transform: translateY(50px);
     }
     100%{
-        transform: translateY(0px);
+        transform: translateY(40px);
     }
 }
-.brand{
-    padding-top: 100px;
+
+
+section{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    
 }
+
+@media(max-width: 768px) {
+    .OnStart {
+        display: none
+    }
+}
+
+.edition{
+    font-size: 5vh; 
+}
+
 
 
 /*
@@ -40,15 +62,7 @@ img{
     }
 }
 
-@media(max-width: 991px) {
-    .heyy-olvidonaBack {
-        font-size:150px
-    }
 
-    .headerOnStart {
-        display: none
-    }
-}
 
 @media(max-width: 576px) {
     .rickrolled {
